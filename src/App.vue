@@ -2,7 +2,7 @@
   <div id="app">
     <div class="min-w-screen min-h-screen bg-gray-800 flex items-center justify-center px-5 py-5">
       <div class="w-full mx-auto rounded-xl bg-gray-100 shadow-lg p-10 text-gray-800 relative overflow-hidden min-w-80 max-w-3xl">
-        <h1 class="font-semibold text-gray-800 dark:text-gray-200 sm:text-lg mb-5">Facebook adatszivárgás ellenőrző</h1>
+        <h1 class="font-semibold text-gray-800 dark:text-gray-200 sm:text-lg mb-5">Facebook adatszivárgás ellenörző</h1>
         <p class="mb-5">
           Ezen a felületen biztonságosan ellenőrizheted, hogy a felhasználói fiókod érintett-e a korábbi adatszivárgásokban.
         </p>
@@ -71,7 +71,6 @@ export default {
 
   created () {
     firebase.initializeApp(firebaseConfig);
-    firebase.setLogLevel('debug')
   },
 
   methods: {
@@ -87,8 +86,6 @@ export default {
       this.isSubmitted = true;
       const phoneSize = phoneSnapshot.size
       const idSize = idSnapshot.size
-
-      console.log({ phoneSize, idSize })
 
       this.isHit = phoneSize > 0 || idSize > 0
     }
